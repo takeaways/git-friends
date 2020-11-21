@@ -186,16 +186,50 @@ git cherry-pick hash
 
 1. git stash
 2. git stash list //stash stack 목록 보기
+3. git stash apply(그냥 적용) id or pop(빼면서 적용)
+4. git stash drop [id]//그냥 제거
+5. git stash clear //전체 삭제
+
 ```
 git stash [push] -m "message"
 git stash list
 
 //지금 스테이징에 올라가 있는 상태를 유지하고 stash stack에 push as well
 git stash push -m "message" --keep-index 
+
+//If you want to push untracking code into stash stack as well, Use -u option.
+
+git stash -u
 ```
 
+# 🛁 헛... fix 하자
 
+## 1. git restore >2.23.0
+- 변경사항을 제거하기
+1. git restore .
+	- 전체적인 내용 초기화
+- staging area에 있는 내용을 working directory 가져오기
+2. git resotre --staged .
+```
+// 해당 내용까지 삭제!
+git restore --source=hash코드
+or
+git restore --source=HEAD~1
+```
 
+## 2. 커밋 수정하기
+1. git commit --amend // 잘 못된 커밋 수정하기.
+	- ‼️서버에 업로드 하지 않았을때 사용하기!!!
+```
+//message
+git commit --amend -m "new message"
+
+//내용 추가하기
+//방금 반든 커밋에서 다시 수정하기...
+~~~~
+git add .
+git commit --amend
+```
 
 
 
