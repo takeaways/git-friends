@@ -198,7 +198,7 @@ git stash list
 git stash push -m "message" --keep-index 
 
 //If you want to push untracking code into stash stack as well, Use -u option.
-
+**텍스트**
 git stash -u
 ```
 
@@ -265,5 +265,16 @@ git reset --hard HEAD// 그냥 커밋 + 내작업 내용 다!!! 삭제해줘 �
 
 > git clean -fd
 트래킹 되지 않는 새로운 파일은 restore되지 않기 때문에 clean을 사용.
+
+## 4. 커밋을 초기화 revert
+- 변경사항을 다시 없애 주는, 삭제해주는, 쥐소해주는 새로운 커밋을 만든다.
+	- 딱! 그 커밋에서 수정한 내용을 제거한 다음 새로운 커밋을 만들어 준다.
+1. git revert hash
+2. git revert --no-commit hash
+	- 바로 커밋을 하지 않고 취소 되는 변경사항을 staging area에 올려준다.
+
+> [[revert]]는 이미 마스터 브랜치에 커밋된 아이들이라면, reset또는 rebase보다 revert를 하는것이 맞습니다. [[revert]]는 새로운 커밋을 만들어서 이미 추가된 내용을 변경하는 것이므로 
+즉❗️ 히스토리를 수정 하지 않기 때문에 언제든지 자유롭게 이용할 수 있다.
+
 
 
