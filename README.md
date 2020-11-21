@@ -1,4 +1,4 @@
-# 🤩 깃의 중요한 컨셉 이해하기
+# ⚛️ 깃의 중요한 컨셉 이해하기
 - 깃은 파일!!
 - working directory : 작업중 [untracked, tracked]
 - staging area : 커밋준비 완료상태
@@ -109,7 +109,7 @@ head~2 // 이전 이전
 4. git checkout 태그이름
 
 
-# 💥 브랜치 💥 
+# Branch 💥 브랜치 💥 
 - 협업의 필수! link - point
 	- master nono🔴
     - feature yes🟢
@@ -180,7 +180,7 @@ git rebase master // new-branch가 master의 최신의 커밋으로 변경
 git cherry-pick hash
 ```
 
-# 💥 스태시 stack 💥
+# Stash 💥 스태시 stack 💥
 - working directory에 있는 나의 작업들!!.. 앗 아직 커밋 단계는아니야❗️❓
 - 잠시 저장!! 얍⚠️
 
@@ -202,7 +202,7 @@ git stash push -m "message" --keep-index
 git stash -u
 ```
 
-# 🛁 헛... fix 하자
+# Reset 🛁 헛... fix 하자 
 
 ## 1. git restore >2.23.0
 - 변경사항을 제거하기
@@ -217,7 +217,7 @@ or
 git restore --source=HEAD~1
 ```
 
-## 2. 커밋 수정하기
+## 2. 커밋 수정하기 amend
 1. git commit --amend // 잘 못된 커밋 수정하기.
 	- ‼️서버에 업로드 하지 않았을때 사용하기!!!
 ```
@@ -231,11 +231,39 @@ git add .
 git commit --amend
 ```
 
+## 2. 커밋을 초기화 시키자 reset
+1. git reset 원하는 커밋 위치!
+	- git reset HEAD~2
+    - git reset hash
+```
+git reset // --mixed  (기본)커밋은 삭제 하지만 내용은 working directory 옮긴다.
+git reset --soft HEAD~1 // --soft : staging area로 가져온다.
+git reset --hard HEAD// 그냥 커밋 + 내작업 내용 다!!! 삭제해줘 🗑‼️
+```
+
+2. 💝 git reflog => reset 되살리기!
+	- 지금까지 실행된 내용을 모두 담고 있어요!
+    - git reset --hard hash 🤩 다시 부활!
+    
+> 🔱 vscode local hisotry!! extension good!!
+⚜️ webstorm은 기본으로 있어요!.....
+
+> git clean -fd
+트래킹 되지 않는 새로운 파일은 restore되지 않기 때문에 clean을 사용.
 
 
 
+## 3. 커밋을 초기화 시키자 reset
+1. git reset 원하는 커밋 위치!
+	- git reset HEAD~2
+    - git reset hash
+```
+git reset // --mixed  (기본)커밋은 삭제 하지만 내용은 working directory 옮긴다.
+git reset --soft HEAD~1 // --soft : staging area로 가져온다.
+git reset --hard HEAD// 그냥 커밋 + 내작업 내용 다!!! 삭제해줘 🗑‼️
+```
 
-
-
+> git clean -fd
+트래킹 되지 않는 새로운 파일은 restore되지 않기 때문에 clean을 사용.
 
 
