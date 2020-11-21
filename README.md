@@ -277,4 +277,23 @@ git reset --hard HEAD// 그냥 커밋 + 내작업 내용 다!!! 삭제해줘 �
 즉❗️ 히스토리를 수정 하지 않기 때문에 언제든지 자유롭게 이용할 수 있다.
 
 
+## 5. 이전 커밋 수정하기 interactive rebasing
+- 🔴 rebasing을 하는 순간 현재 rebasing이후의 커밋은 새로운 히스토리가 된다!!
+	- 전부 새로운 아이템이 된다!!!!
+	- 내가 가고 싶은 이전보다 하나더 ◀️ 앞!!! 으로 rebasing해야 한다.
+1. git rebase -i hash
+```
+//hash값 이후나온 커밋들을 함께 rebase할 거다!
+git rebase -i hash
 
+pick: use commit
+reword: use commit, but edit the commit message
+edit: use commit, but stop for ameding // 컷밋을 쓰지만 안에 변경 사항을 바꾸겠다.
+squash: use commit, but meld into previous commit //커밋을 하나로 묶는다.
+fixup: squash랑 같지만 메세지 안남김.
+
+💥drop을 해서 충돌이나면
+git add .
+git rebase --continue를 해줘용
+
+```
