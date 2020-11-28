@@ -1,5 +1,5 @@
 # ⚛️ 깃의 중요한 컨셉 이해하기
-- 깃은 파일!!
+- 깃은 파일!
 - working directory : 작업중 [untracked, tracked]
 - staging area : 커밋준비 완료상태
 - .git directory : 커밋후 히스토리에 저장 -> checkout -> 돌아가기 가능!
