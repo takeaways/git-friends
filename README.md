@@ -28,7 +28,7 @@ echo hello world3 > c.txt
 
 git add *.txt // -> staging area => ready to commit
 echo welcome >> a.txt //update => modified
-git add a.txt
+git add a.txt.
 
 git rm --cached // from stage to untracked
 
